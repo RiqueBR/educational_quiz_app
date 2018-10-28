@@ -17,7 +17,7 @@
 //
 // ]);
 
-use leaderboard;
+use quiz;
 db.dropDatabase();
 
 db.leaderboard.insertMany([
