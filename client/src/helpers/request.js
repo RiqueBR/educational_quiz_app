@@ -5,7 +5,7 @@ const Request = function(url) {
 Request.prototype.get = function() {
   return fetch(this.url)
     .then((response) =>
-      debugger response.json())
+    response.json())
 };
 
 // CREATE USERNAME

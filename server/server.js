@@ -25,7 +25,7 @@ MongoClient.connect('mongodb://localhost:27017')
 
     // QUIZ DATABASE
     // LEADERBOARD COLLECTION
-    const db = client.db('quiz-data');
+    const db = client.db('quiz_data');
     const leaderboardCollection = db.collection('leaderboard');
     const leaderboardRouter = createRouter(leaderboardCollection);
     app.use('/api/leaderboard', leaderboardRouter);
