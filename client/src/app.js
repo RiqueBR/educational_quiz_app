@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const questions_one = new Question();
   questions_one.getData();
+  questions_one.getQuestion();
 
 
 

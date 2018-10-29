@@ -5,6 +5,7 @@ const Question = function(url) {
   this.url = 'http://localhost:3000/api/questions';
   this.request = new Request(this.url);
   this.questions = [];
+
 }
 
 Question.prototype.bindEvents = function() {
@@ -23,8 +24,17 @@ Question.prototype.getData = function() {
 // We'll need a post answer method (answer-submitted)
 
 Question.prototype.getQuestion = function(position) {
+
   // Publish the question at position
   const question = this.questions[position];
+
+  PubSub.subscribe("Answer:answer-clicked", (event) => {
+    console.dir(event.detail);
+
+    this.getData()
+
+  })
+
   PubSub.publish("Questions:one-question-loaded", question);
 };
 

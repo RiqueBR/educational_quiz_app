@@ -12,12 +12,20 @@ QuizGridView.prototype.bindEvents = function() {
     // Request question 0 (Publish that we need question 0)
     this.render(event.detail);
   });
+
+
 };
 
-QuizGridView.prototype.render = function(question) {
+QuizGridView.prototype.render = function(result) {
   this.container.innerHTML = '';
   const singleQuestionView = new QuestionMainContainer(this.container);
-  singleQuestionView.render(question);
+  singleQuestionView.render(result);
 };
+
+
+QuizGridView.prototype.methodName = function () {
+
+};
+
 
 module.exports = QuizGridView;
