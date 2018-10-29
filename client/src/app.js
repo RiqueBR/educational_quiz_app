@@ -3,8 +3,6 @@ const Question = require('./models/questions.js');
 const QuizGridView = require('./views/quiz_grid_view.js');
 const LeaderboardView = require('./views/leaderboard_view.js');
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   console.log("javascript loaded");
 
@@ -19,10 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const newQuizGrid = new QuizGridView(quizGrid);
   newQuizGrid.bindEvents();
 
-
   const leaderboard_data = new Leaderboard();
   leaderboard_data.getData();
 
   const questions_one = new Question();
   questions_one.getData();
+
+
+
+
 });

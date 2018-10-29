@@ -3,17 +3,17 @@ const LeaderboardMainContainer = require('./leaderboard_main_container_view.js')
 
 
 
-const LeaderboardView = function (container){
+const LeaderboardView = function(container) {
   this.container = container;
 }
 
-LeaderboardView.prototype.bindEvents = function () {
+LeaderboardView.prototype.bindEvents = function() {
   PubSub.subscribe("Leaderboard:data-loaded", (event) => {
     this.render(event.detail)
   })
 };
 
-LeaderboardView.prototype.render = function (scores) {
+LeaderboardView.prototype.render = function(scores) {
   this.container.innerHTML = '';
   const leaderboardView = new LeaderboardMainContainer(this.container);
   scores.forEach((score) => leaderboardView.render(score))

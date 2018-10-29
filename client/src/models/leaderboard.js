@@ -7,12 +7,12 @@ const Leaderboard = function(url) {
 };
 
 
-Leaderboard.prototype.getData = function () {
+Leaderboard.prototype.getData = function() {
   this.request.get()
-  .then((scores) => {
-    PubSub.publish("Leaderboard:data-loaded", scores)
-  })
-  .catch(console.error)
+    .then((scores) => {
+      PubSub.publish("Leaderboard:data-loaded", scores)
+    })
+    .catch(console.error)
 };
 
 

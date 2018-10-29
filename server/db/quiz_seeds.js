@@ -1,7 +1,6 @@
 use quiz_data;
 db.dropDatabase();
-db.leaderboard.insertMany([
-  {
+db.leaderboard.insertMany([{
     username: "Colin",
     score: 0
   },
@@ -62,7 +61,7 @@ db.questions.insertMany([{
     category: "geography_easy",
     type: "multiple",
     difficulty: "easy",
-    question: "What is the name of New Zealand&#039;s indigenous people?",
+    question: "What is the name of New Zealand's indigenous people?",
     correct_answer: "Maori",
     answers: [
       "Maori",
@@ -163,7 +162,7 @@ db.questions.insertMany([{
     category: "geography_hard",
     type: "multiple",
     difficulty: "hard",
-    question: "What North American tourist attraction is served by the &quot;Maid of the Mist&quot; tour company?",
+    question: "What North American tourist attraction is served by the 'Maid of the Mist tour company?",
     correct_answer: "Niagara Falls",
     answers: [
       "Niagara Falls",

@@ -2,22 +2,22 @@ const PubSub = require('../helpers/pub_sub.js');
 const QuestionMainContainer = require('./questions_main_container_view.js')
 
 
-const QuizGridView = function(container){
+const QuizGridView = function(container) {
   this.container = container;
+  this.currentQuestionIndex = 0;
 };
 
-QuizGridView.prototype.bindEvents = function () {
+QuizGridView.prototype.bindEvents = function() {
   PubSub.subscribe("Questions:data-loaded", (event) => {
-    // console.log("Here's an event", event);
-    this.render(event.detail)
-  })
+    // Request question 0 (Publish that we need question 0)
+    this.render(event.detail);
+  });
 };
 
-QuizGridView.prototype.render = function (questions) {
+QuizGridView.prototype.render = function(question) {
   this.container.innerHTML = '';
-  const questionView = new QuestionMainContainer(this.container);
-  questions.forEach((question) => questionView.render(question));
+  const singleQuestionView = new QuestionMainContainer(this.container);
+  singleQuestionView.render(question);
 };
-
 
 module.exports = QuizGridView;
