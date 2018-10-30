@@ -16,27 +16,5 @@ Score.prototype.bindEvents = function() {
   })
 };
 
-// Score.prototype.getScore = function() {
-// //   this.request.get()
-// //     .then((allData) => {
-// //       this.score = allData;
-// //       const score = {}
-// //       question.index = this.currentScore
-// //       question.selectedQuestion = this.score[this.currentScore]
-// //       PubSub.publish("Score:data-loaded", score)
-// //     })
-// //     .catch(console.error)
-// // };
-//
-// Score.prototype.getScore = function(score) {
-//   let incrementScore = parseInt(score, 10) + 1;
-//   let newScore = this.currentScore += incrementScore
-//   // var score = this.currentScore parseInt(score, 10) + 1;
-//   // } else {
-//   //   var score = this.currentScore
-//   // }
-//   return newScore;
-// };
-
 
 module.exports = Score;

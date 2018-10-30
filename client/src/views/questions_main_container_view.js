@@ -6,25 +6,28 @@ const QuestionMainContainer = function(container) {
 };
 
 QuestionMainContainer.prototype.render = function(question) {
+  // creates main container
   const questionContainer = document.createElement('div')
   questionContainer.classList.add('question-container')
-
-  console.dir(question);
   // Create question box (div)
+  const questionInfo = document.createElement('div')
+  questionInfo.classList.add('question-info')
+  // Creates one question
   const one_question = this.createQuestion(question.selectedQuestion.question)
-  questionContainer.appendChild(one_question);
-
+  questionInfo.appendChild(one_question);
   // Create answer box (div)
+  const answerInfo = document.createElement('div')
+  answerInfo.classList.add('answer-info')
+  // creates four answers
   const four_answers = this.createAnswers(question.selectedQuestion)
-  questionContainer.appendChild(four_answers);
-
+  answerInfo.appendChild(four_answers)
+  // creates a button and append it together with four answers
   const nextButton = this.createButton(question.index)
-  questionContainer.appendChild(nextButton)
-
-  // NEED TO FIX
-
-
-
+  nextButton.textContent = 'NEXT'
+  answerInfo.appendChild(nextButton)
+  // Appends question box and answer box into main container
+  questionContainer.appendChild(questionInfo);
+  questionContainer.appendChild(answerInfo)
   this.container.appendChild(questionContainer);
 
 };
@@ -56,9 +59,10 @@ QuestionMainContainer.prototype.createAnswers = function(questions) {
   const answer_list = document.createElement('ul');
   const answer_display = questions.answers;
   answer_display.id = 'answer-display'
-  answer_display.forEach((answer) => {
+  answer_display.forEach((answer, index) => {
     const newAnswer = document.createElement('li')
     newAnswer.textContent = answer;
+    newAnswer.id = `box-${index}`
     answer_list.appendChild(newAnswer)
 
     var result;
@@ -77,17 +81,5 @@ QuestionMainContainer.prototype.createAnswers = function(questions) {
   });
   return answer_list
 };
-
-// NEED TO FIX
-// QuestionMainContainer.prototype.createScore = function(textContent) {
-//   const score_display = document.createElement('p');
-//   score_display.textContent = `Score:`;
-//   score_display.id = 'score_display'
-//   return score_display
-// };
-
-
-
-
 
 module.exports = QuestionMainContainer;

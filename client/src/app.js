@@ -21,11 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const leaderboard_data = new Leaderboard();
   leaderboard_data.getData();
 
-  // TO BE CHECKED
-  // const scoreGrid = document.querySelector('div#main-display')
-  // const score_data = new Score(scoreGrid);
-  // score_data.getData();
-  // score_data.bindEvents();
 
   const scoreModel = new Score();
   scoreModel.bindEvents();

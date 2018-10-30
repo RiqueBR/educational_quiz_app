@@ -13,78 +13,78 @@ db.leaderboard.insertMany([{
     score: 7
   }
 ]);
-db.questions.insertMany([{
-    // geography_easy: [{
-    topic: "Geography",
-    category: "geography_easy",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What colour is the circle on the Japanese flag?",
-    correct_answer: "Red",
-    answers: [
-      "White",
-      "Yellow",
-      "Black",
-      "Red"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_easy",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What is the capital of Denmark?",
-    correct_answer: "Copenhagen",
-    answers: [
-      "Copenhagen",
-      "Aarhus",
-      "Odense",
-      "Aalborg"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_easy",
-    type: "multiple",
-    difficulty: "easy",
-    question: "If soccer is called football in England, what is American football called in England?",
-    correct_answer: "American football",
-    answers: [
-      "American football",
-      "Combball",
-      "Handball",
-      "Touchdown"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_easy",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What is the name of New Zealand's indigenous people?",
-    correct_answer: "Maori",
-    answers: [
-      "Maori",
-      "Vikings",
-      "Polynesians",
-      "Samoans"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_easy",
-    type: "multiple",
-    difficulty: "easy",
-    question: "What is the capital of Scotland?",
-    correct_answer: "Edinburgh",
-    answers: [
-      "Edinburgh",
-      "Glasgow",
-      "Dundee",
-      "London"
-    ]
-  }
-]);
+// db.questions.insertMany([{
+//     // geography_easy: [{
+//     topic: "Geography",
+//     category: "geography_easy",
+//     type: "multiple",
+//     difficulty: "easy",
+//     question: "What colour is the circle on the Japanese flag?",
+//     correct_answer: "Red",
+//     answers: [
+//       "White",
+//       "Yellow",
+//       "Black",
+//       "Red"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_easy",
+//     type: "multiple",
+//     difficulty: "easy",
+//     question: "What is the capital of Denmark?",
+//     correct_answer: "Copenhagen",
+//     answers: [
+//       "Copenhagen",
+//       "Aarhus",
+//       "Odense",
+//       "Aalborg"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_easy",
+//     type: "multiple",
+//     difficulty: "easy",
+//     question: "If soccer is called football in England, what is American football called in England?",
+//     correct_answer: "American football",
+//     answers: [
+//       "American football",
+//       "Combball",
+//       "Handball",
+//       "Touchdown"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_easy",
+//     type: "multiple",
+//     difficulty: "easy",
+//     question: "What is the name of New Zealand's indigenous people?",
+//     correct_answer: "Maori",
+//     answers: [
+//       "Maori",
+//       "Vikings",
+//       "Polynesians",
+//       "Samoans"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_easy",
+//     type: "multiple",
+//     difficulty: "easy",
+//     question: "What is the capital of Scotland?",
+//     correct_answer: "Edinburgh",
+//     answers: [
+//       "Edinburgh",
+//       "Glasgow",
+//       "Dundee",
+//       "London"
+//     ]
+//   }
+// ]);
 db.questions.insertMany([{
     // geography_medium: [{
     topic: "Geography",
@@ -95,7 +95,7 @@ db.questions.insertMany([{
     correct_answer: "Switzerland",
     answers: [
       "Switzerland",
-      "United Kingdom",
+      "UK",
       "France",
       "Belgium"
     ]
@@ -116,16 +116,16 @@ db.questions.insertMany([{
   },
   {
     topic: "Geography",
-    category: "geography_medium",
+    category: "geography_hard",
     type: "multiple",
-    difficulty: "medium",
-    question: "Which Canadian province has Charlottetown as its capital?",
-    correct_answer: "Prince Edward Island",
+    difficulty: "hard",
+    question: "What is the second-largest city in Lithuania?",
+    correct_answer: "Kaunas",
     answers: [
-      "Prince Edward Island",
-      "Saskachewan",
-      "Northwest Terrirories",
-      "Ontario"
+      "Kaunas",
+      "Panevezys",
+      "Vilnius",
+      "Klaipeda"
     ]
   },
   {
@@ -157,74 +157,74 @@ db.questions.insertMany([{
     ]
   }
 ]);
-db.questions.insertMany([{
-    topic: "Geography",
-    category: "geography_hard",
-    type: "multiple",
-    difficulty: "hard",
-    question: "What North American tourist attraction is served by the 'Maid of the Mist tour company?",
-    correct_answer: "Niagara Falls",
-    answers: [
-      "Niagara Falls",
-      "Whistler, British Columbia",
-      "Disney World",
-      "Yosemite National Park"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_hard",
-    type: "multiple",
-    difficulty: "hard",
-    question: "What is the tallest mountain in Canada?",
-    correct_answer: "Mount Logan",
-    answers: [
-      "Mount Logan",
-      "Mont Tremblant",
-      "Whistler Mountain",
-      "Blue Mountain"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_hard",
-    type: "multiple",
-    difficulty: "hard",
-    question: "What is the second-largest city in Lithuania?",
-    correct_answer: "Kaunas",
-    answers: [
-      "Kaunas",
-      "Panevėžys",
-      "Vilnius",
-      "Klaipėda"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_hard",
-    type: "multiple",
-    difficulty: "hard",
-    question: "What is the land connecting North America and South America?",
-    correct_answer: "Isthmus of Panama",
-    answers: [
-      "Isthmus of Panama",
-      "Isthmus of Suez",
-      "Urals",
-      "Australasia"
-    ]
-  },
-  {
-    topic: "Geography",
-    category: "geography_hard",
-    type: "multiple",
-    difficulty: "hard",
-    question: "What is the most common climbing route for the second highest mountain in the world, K2?",
-    correct_answer: "Abruzzi Spur",
-    answers: [
-      "Abruzzi Spur",
-      "Magic Line",
-      "Cesen Route",
-      "Polish Line"
-    ]
-  }
-]);
+// db.questions.insertMany([{
+//     topic: "Geography",
+//     category: "geography_hard",
+//     type: "multiple",
+//     difficulty: "hard",
+//     question: "What North American tourist attraction is served by the 'Maid of the Mist tour company?",
+//     correct_answer: "Niagara Falls",
+//     answers: [
+//       "Niagara Falls",
+//       "Whistler, British Columbia",
+//       "Disney World",
+//       "Yosemite National Park"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_hard",
+//     type: "multiple",
+//     difficulty: "hard",
+//     question: "What is the tallest mountain in Canada?",
+//     correct_answer: "Mount Logan",
+//     answers: [
+//       "Mount Logan",
+//       "Mont Tremblant",
+//       "Whistler Mountain",
+//       "Blue Mountain"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_hard",
+//     type: "multiple",
+//     difficulty: "hard",
+//     question: "What is the second-largest city in Lithuania?",
+//     correct_answer: "Kaunas",
+//     answers: [
+//       "Kaunas",
+//       "Panevėžys",
+//       "Vilnius",
+//       "Klaipėda"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_hard",
+//     type: "multiple",
+//     difficulty: "hard",
+//     question: "What is the land connecting North America and South America?",
+//     correct_answer: "Isthmus of Panama",
+//     answers: [
+//       "Isthmus of Panama",
+//       "Isthmus of Suez",
+//       "Urals",
+//       "Australasia"
+//     ]
+//   },
+//   {
+//     topic: "Geography",
+//     category: "geography_hard",
+//     type: "multiple",
+//     difficulty: "hard",
+//     question: "What is the most common climbing route for the second highest mountain in the world, K2?",
+//     correct_answer: "Abruzzi Spur",
+//     answers: [
+//       "Abruzzi Spur",
+//       "Magic Line",
+//       "Cesen Route",
+//       "Polish Line"
+//     ]
+//   }
+// ]);
