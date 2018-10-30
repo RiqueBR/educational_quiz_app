@@ -23,9 +23,7 @@ QuizGridView.prototype.render = function(result) {
 };
 
 
-QuizGridView.prototype.methodName = function () {
 
-};
 
 
 module.exports = QuizGridView;
