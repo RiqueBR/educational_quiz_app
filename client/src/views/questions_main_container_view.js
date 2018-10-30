@@ -48,6 +48,22 @@ QuestionMainContainer.prototype.createButton = function(index) {
 
 };
 
+QuestionMainContainer.prototype.createButton = function(index) {
+  const button = document.createElement('button');
+  button.id = 'button-display'
+  console.log("index:", index);
+  const newIndex = parseInt(index, 10) + 1;
+
+  button.value = newIndex;
+
+  button.addEventListener('click', (evt) => {
+    PubSub.publish("Answer:answer-clicked", evt.target.value)
+  })
+
+  return button;
+
+};
+
 QuestionMainContainer.prototype.createQuestion = function(textContent) {
   const question_display = document.createElement('div');
   question_display.textContent = textContent;
