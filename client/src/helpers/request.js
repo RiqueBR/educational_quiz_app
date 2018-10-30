@@ -9,16 +9,16 @@ Request.prototype.get = function() {
 };
 
 // CREATE USERNAME
-// Request.prototype.post = function(payload) {
-//   return fetch(this.url, {
-//       method: 'POST',
-//       body: JSON.stringify(payload),
-//       headers: {
-//         'Content-type': 'application/json'
-//       }
-//     })
-//     .then((response) => response.json())
-// };
+Request.prototype.post = function(payload) {
+  return fetch(this.url, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-type': 'application/json'
+      }
+    })
+    .then((response) => response.json())
+};
 
 // UPDATE TO BE ADDED FOR LEADERBOARD
 

@@ -1,26 +1,47 @@
 const PubSub = require('../helpers/pub_sub.js')
 
-
-// Here will render html
 const QuestionMainContainer = function(container) {
   this.container = container;
+  // this.questionIndex = 0;
 };
 
-QuestionMainContainer.prototype.render = function(questions) {
+QuestionMainContainer.prototype.render = function(question) {
   const questionContainer = document.createElement('div')
   questionContainer.classList.add('question-container')
 
+  console.dir(question);
   // Create question box (div)
-  // Make sure it shows only one question
-  const one_question = this.createQuestion(questions.question)
+  const one_question = this.createQuestion(question.selectedQuestion.question)
   questionContainer.appendChild(one_question);
 
   // Create answer box (div)
-  const four_answer = this.createAnswers(questions)
-  questionContainer.appendChild(four_answer);
+  const four_answers = this.createAnswers(question.selectedQuestion)
+  questionContainer.appendChild(four_answers);
+
+  const nextButton = this.createButton(question.index)
+  questionContainer.appendChild(nextButton)
+
+  // NEED TO FIX
+
 
 
   this.container.appendChild(questionContainer);
+
+};
+
+QuestionMainContainer.prototype.createButton = function(index) {
+  const button = document.createElement('button');
+  button.id = 'button-display'
+  console.log("index:", index);
+  const newIndex = parseInt(index, 10) + 1;
+  // Clarify meaning of radix
+  button.value = newIndex;
+
+  button.addEventListener('click', (evt) => {
+    PubSub.publish("QuestionView:next-clicked", evt.target.value)
+  })
+
+  return button;
 
 };
 
@@ -32,27 +53,38 @@ QuestionMainContainer.prototype.createQuestion = function(textContent) {
 };
 
 QuestionMainContainer.prototype.createAnswers = function(questions) {
-  // debugger;
-  // for each answer in questions
-  for (var answer in questions.answers) {
-    const answer_display = document.createElement('div')
-    debugger;
-    answer_display.textContent = questions.answers
-    answer_display.id = 'answer-display'
-  };
+  const answer_list = document.createElement('ul');
+  const answer_display = questions.answers;
+  answer_display.id = 'answer-display'
+  answer_display.forEach((answer) => {
+    const newAnswer = document.createElement('li')
+    newAnswer.textContent = answer;
+    answer_list.appendChild(newAnswer)
 
-  return answer;
-  // create a new div
+    var result;
 
-  // change the text content of the div to be the answer
 
-  // with the new div, .addEventListener("click", () => { console.log("You were right! / You were wrong"); })
-
-  // when the div is clicked, tell the user whether they were right or wrong, based on questions.correct_answer
-
-  // Publish that the question has been completed
+    newAnswer.addEventListener("click", (answer) => {
+      if (answer.target.textContent === questions.correct_answer) {
+        var result = "You were right";
+        PubSub.publish("Answer:answer-clicked", result)
+        // UPDATES USER SCORE
+      } else {
+        var result = "You were wrong";
+      }
+      console.log(result);
+    })
+  });
+  return answer_list
 };
 
+// NEED TO FIX
+// QuestionMainContainer.prototype.createScore = function(textContent) {
+//   const score_display = document.createElement('p');
+//   score_display.textContent = `Score:`;
+//   score_display.id = 'score_display'
+//   return score_display
+// };
 
 
 
