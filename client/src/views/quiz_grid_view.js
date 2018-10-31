@@ -5,7 +5,6 @@ const ScoreView = require('./score_view.js');
 const QuizGridView = function(container) {
   this.container = container;
   this.score = 0;
-  // this.currentQuestionIndex = 0;
 };
 
 QuizGridView.prototype.bindEvents = function() {
@@ -31,12 +30,10 @@ QuizGridView.prototype.checkGame = function(data) {
 
     this.renderScore(this.score);
 
-
   }
 };
 
 QuizGridView.prototype.renderQuestion = function(result) {
-
   // RENDER SINGLE SINGLEQUESTION IF INDEX IS 4 OR LESS
   this.container.innerHTML = '';
   const singleQuestionView = new QuestionMainContainer(this.container);

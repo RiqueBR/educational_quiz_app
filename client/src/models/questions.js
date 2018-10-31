@@ -1,5 +1,6 @@
 const Request = require('../helpers/request.js');
 const PubSub = require('../helpers/pub_sub.js');
+const shuffle = require("lodash/shuffle");
 
 const Question = function(url) {
   this.url = 'http://localhost:3000/api/questions';
@@ -19,11 +20,12 @@ Question.prototype.bindEvents = function() {
 Question.prototype.getData = function() {
   this.request.get()
     .then((allData) => {
-      this.questions = allData;
+      this.questions = shuffle(allData);
       const question = {}
       question.index = this.indexPosition
       question.selectedQuestion = this.questions[this.indexPosition]
       // const index = this.increment()
+
       PubSub.publish("Questions:data-loaded", question)
     })
     .catch(console.error)

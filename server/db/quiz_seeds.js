@@ -94,9 +94,9 @@ db.questions.insertMany([{
     question: "The World Health Organization headquarters is located in which European country?",
     correct_answer: "Switzerland",
     answers: [
-      "Switzerland",
       "UK",
       "France",
+      "Switzerland",
       "Belgium"
     ]
   },
@@ -108,10 +108,10 @@ db.questions.insertMany([{
     question: "The historical city Timbuktu is located in which West African country?",
     correct_answer: "Mali",
     answers: [
-      "Mali",
       "Senegal",
       "Niger",
-      "Burkina Faso"
+      "Burkina Faso",
+      "Mali",
     ]
   },
   {
@@ -122,8 +122,8 @@ db.questions.insertMany([{
     question: "What is the second-largest city in Lithuania?",
     correct_answer: "Kaunas",
     answers: [
-      "Kaunas",
       "Panevezys",
+      "Kaunas",
       "Vilnius",
       "Klaipeda"
     ]
@@ -136,10 +136,10 @@ db.questions.insertMany([{
     question: "What is the capital of Seychelles?",
     correct_answer: "Victoria",
     answers: [
-      "Victoria",
       "Luanda",
       "Djamena",
-      "Tripoli"
+      "Tripoli",
+      "Victoria",
     ]
   },
   {
@@ -150,10 +150,11 @@ db.questions.insertMany([{
     question: "What is the capital city of New Zealand?",
     correct_answer: "Wellington",
     answers: [
+      "Melbourne",
       "Wellington",
       "Auckland",
       "Christchurch",
-      "Melbourne"
+
     ]
   }
 ]);

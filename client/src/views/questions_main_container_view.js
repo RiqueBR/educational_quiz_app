@@ -1,4 +1,5 @@
 const PubSub = require('../helpers/pub_sub.js')
+const shuffle = require("lodash/shuffle");
 
 const QuestionMainContainer = function(container) {
   this.container = container;
@@ -54,25 +55,6 @@ QuestionMainContainer.prototype.createButton = function(index) {
 
 };
 
-<<<<<<< HEAD
-// QuestionMainContainer.prototype.createButton = function(index) {
-//   const button = document.createElement('button');
-//   button.id = 'button-display'
-//   console.log("index:", index);
-//   const newIndex = parseInt(index, 10) + 1;
-//
-//   button.value = newIndex;
-//
-//   button.addEventListener('click', (evt) => {
-//     PubSub.publish("Answer:answer-clicked", evt.target.value)
-//   })
-//
-//   return button;
-//
-// };
-=======
->>>>>>> 37c4429533669e7c507bddc433d6c8a63703b29b
-
 QuestionMainContainer.prototype.createQuestion = function(textContent) {
   const question_display = document.createElement('div');
   question_display.textContent = textContent;
@@ -82,12 +64,12 @@ QuestionMainContainer.prototype.createQuestion = function(textContent) {
 
 QuestionMainContainer.prototype.createAnswers = function(questions) {
   const answer_list = document.createElement('ul');
-  const answer_display = questions.answers;
-  answer_display.id = 'answer-display'
+  const answer_display = shuffle(questions.answers);
+  answer_display.classList = 'answer-display'
   answer_display.forEach((answer, index) => {
     const newAnswer = document.createElement('li')
     newAnswer.textContent = answer;
-    newAnswer.id = `box-${index}`
+    newAnswer.classList = `box-${index}`
     answer_list.appendChild(newAnswer)
 
     var result;
@@ -97,9 +79,11 @@ QuestionMainContainer.prototype.createAnswers = function(questions) {
       if (answer.target.textContent === questions.correct_answer) {
         var result = "You were right";
         PubSub.publish("Answer:answer-clicked", result)
+        answer.target.id = 'true-answer'
         // UPDATES USER SCORE
       } else {
         var result = "You were wrong";
+        answer.target.id = 'false-answer'
       }
       console.log(result);
     })
