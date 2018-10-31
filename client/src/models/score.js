@@ -10,7 +10,7 @@ const Score = function(url) {
 Score.prototype.bindEvents = function() {
   PubSub.subscribe("Answer:answer-clicked", (event) => {
     this.currentScore += 1;
-    console.dir(event.detail);
+    // console.dir(event.detail);
     console.dir(this.currentScore);
     PubSub.publish("Score:data-loaded", this.currentScore)
   })

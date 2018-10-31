@@ -10,7 +10,7 @@ const QuizGridView = function(container) {
 
 QuizGridView.prototype.bindEvents = function() {
   PubSub.subscribe("Questions:data-loaded", (event) => {
-    console.dir(event.detail);
+    // console.dir(event.detail);
     // Request question 0 (Publish that we need question 0)
     this.checkGame(event.detail);
   });
@@ -21,13 +21,8 @@ QuizGridView.prototype.bindEvents = function() {
     this.score = evt.detail
   });
 
-  // this.
-};
 
-// QuizGridView.prototype.getScore = function() {
-//
-//
-// };
+};
 
 QuizGridView.prototype.checkGame = function(data) {
   if (data.index <= 4) {
@@ -48,11 +43,6 @@ QuizGridView.prototype.renderQuestion = function(result) {
   const singleQuestionView = new QuestionMainContainer(this.container);
   singleQuestionView.render(result);
 
-  // ELSE RENDER SCORE VIEW
-
-
-
-  // const scoreView = new ScoreView(this.container)
 };
 
 

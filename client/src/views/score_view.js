@@ -9,6 +9,9 @@ ScoreView.prototype.render = function(score) {
   const scoreTitle = document.createElement('h1');
   scoreTitle.textContent = `Well Done!! You scored: ${score}`;
 
+  // Add a trophy image here?
+  // also change first question to another question
+
   scoreContainer.appendChild(scoreTitle);
   this.container.appendChild(scoreContainer);
 

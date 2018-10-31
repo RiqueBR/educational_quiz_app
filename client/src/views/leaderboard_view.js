@@ -1,8 +1,6 @@
 const PubSub = require('../helpers/pub_sub.js')
 const LeaderboardMainContainer = require('./leaderboard_main_container_view.js')
 
-
-
 const LeaderboardView = function(container) {
   this.container = container;
 }
