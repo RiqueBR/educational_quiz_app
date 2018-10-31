@@ -9,22 +9,28 @@ QuestionMainContainer.prototype.render = function(question) {
   // creates main container
   const questionContainer = document.createElement('div')
   questionContainer.classList.add('question-container')
+
   // Create question box (div)
   const questionInfo = document.createElement('div')
   questionInfo.classList.add('question-info')
+
   // Creates one question
   const one_question = this.createQuestion(question.selectedQuestion.question)
   questionInfo.appendChild(one_question);
+
   // Create answer box (div)
   const answerInfo = document.createElement('div')
   answerInfo.classList.add('answer-info')
+
   // creates four answers
   const four_answers = this.createAnswers(question.selectedQuestion)
   answerInfo.appendChild(four_answers)
+
   // creates a button and append it together with four answers
   const nextButton = this.createButton(question.index)
   nextButton.textContent = 'NEXT'
   answerInfo.appendChild(nextButton)
+
   // Appends question box and answer box into main container
   questionContainer.appendChild(questionInfo);
   questionContainer.appendChild(answerInfo)
@@ -48,6 +54,7 @@ QuestionMainContainer.prototype.createButton = function(index) {
 
 };
 
+<<<<<<< HEAD
 // QuestionMainContainer.prototype.createButton = function(index) {
 //   const button = document.createElement('button');
 //   button.id = 'button-display'
@@ -63,6 +70,8 @@ QuestionMainContainer.prototype.createButton = function(index) {
 //   return button;
 //
 // };
+=======
+>>>>>>> 37c4429533669e7c507bddc433d6c8a63703b29b
 
 QuestionMainContainer.prototype.createQuestion = function(textContent) {
   const question_display = document.createElement('div');
