@@ -35,24 +35,28 @@ img {
   background-color: white;
   color: rgb(0, 104, 163);
   box-shadow: inset 0px 0px 0px 10px rgba(0, 104, 163, 1);
+  cursor: pointer;
 }
 
 #box-1:hover {
   background-color: white;
   color: rgb(242, 107, 40);
   box-shadow: inset 0px 0px 0px 10px rgb(242, 107, 40);
+  cursor: pointer;
 }
 
 #box-2:hover {
   background-color: white;
   color: rgb(255, 221, 23);
   box-shadow: inset 0px 0px 0px 10px rgb(255, 221, 23);
+  cursor: pointer;
 }
 
 #box-3:hover {
   background-color: white;
   color: rgb(55, 185, 147);
   box-shadow: inset 0px 0px 0px 10px rgb(55, 185, 147);
+  cursor: pointer;
 }
 
 #box-0::after {
@@ -156,6 +160,10 @@ form {
   width: 204pt;
   height: 38pt;
   align-content: center;
+}
+
+.add-user-btn:hover {
+  cursor: pointer;
 }
 
 .user-input {
