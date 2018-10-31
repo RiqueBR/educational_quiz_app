@@ -5,22 +5,49 @@
   <script src="./js/bundle.js"></script>
   <link rel="stylesheet" href="./css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Londrina+Solid:100,300,400" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favi.png" class='favicon'>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>QUIZ</title>
+  <script>
+    function show(shown, hidden) {
+      document.getElementById(shown).style.display = 'block';
+      document.getElementById(hidden).style.display = 'none';
+      return false;
+    }
+  </script>
+  <script type="text/javascript">
+    function store() {
+      var inputUsername = document.getElementById("username").value;
+      localStorage.setItem("username", inputUsername);
+    }
+  </script>
+
+
 </head>
 
 <body>
 
   <div class="wrapper">
     <div class="flex-container">
-      <h1> QUIZ </h1>
+      <!-- <h1> QUIZ </h1> -->
+      <img src="images/logo.png">
     </div>
     <div class="flex-container">
-      <div id="main-display"></div>
+      <div id="main-display" style="display:none">
+        <a href="#" onclick="return show('landing-page','main-display');"></a>></div>
+
+
     </div>
-  </div>
+    <div id="landing-page">
+      <h1> Welcome to the Educational Quiz Game </h1>
+      <form>
+        <input type="text" name="enter-username" class="user-input" placeholder="ENTER NAME">
+        <input type="button" class="add-user-btn" value="PLAY QUIZ" <a href="http://localhost:3000/api/questions" onclick="return show('main-display','landing-page');store()"></a>
+      </form>
+    </div>
+
 </body>
 
 </html>

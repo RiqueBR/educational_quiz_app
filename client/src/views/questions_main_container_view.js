@@ -9,22 +9,28 @@ QuestionMainContainer.prototype.render = function(question) {
   // creates main container
   const questionContainer = document.createElement('div')
   questionContainer.classList.add('question-container')
+
   // Create question box (div)
   const questionInfo = document.createElement('div')
   questionInfo.classList.add('question-info')
+
   // Creates one question
   const one_question = this.createQuestion(question.selectedQuestion.question)
   questionInfo.appendChild(one_question);
+
   // Create answer box (div)
   const answerInfo = document.createElement('div')
   answerInfo.classList.add('answer-info')
+
   // creates four answers
   const four_answers = this.createAnswers(question.selectedQuestion)
   answerInfo.appendChild(four_answers)
+
   // creates a button and append it together with four answers
   const nextButton = this.createButton(question.index)
   nextButton.textContent = 'NEXT'
   answerInfo.appendChild(nextButton)
+
   // Appends question box and answer box into main container
   questionContainer.appendChild(questionInfo);
   questionContainer.appendChild(answerInfo)
@@ -48,21 +54,6 @@ QuestionMainContainer.prototype.createButton = function(index) {
 
 };
 
-QuestionMainContainer.prototype.createButton = function(index) {
-  const button = document.createElement('button');
-  button.id = 'button-display'
-  console.log("index:", index);
-  const newIndex = parseInt(index, 10) + 1;
-
-  button.value = newIndex;
-
-  button.addEventListener('click', (evt) => {
-    PubSub.publish("Answer:answer-clicked", evt.target.value)
-  })
-
-  return button;
-
-};
 
 QuestionMainContainer.prototype.createQuestion = function(textContent) {
   const question_display = document.createElement('div');

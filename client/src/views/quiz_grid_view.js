@@ -20,14 +20,8 @@ QuizGridView.prototype.bindEvents = function() {
 
     this.score = evt.detail
   });
-
-  // this.
 };
 
-// QuizGridView.prototype.getScore = function() {
-//
-//
-// };
 
 QuizGridView.prototype.checkGame = function(data) {
   if (data.index <= 4) {
@@ -50,12 +44,8 @@ QuizGridView.prototype.renderQuestion = function(result) {
 
   // ELSE RENDER SCORE VIEW
 
-
-
   // const scoreView = new ScoreView(this.container)
 };
-
-
 
 QuizGridView.prototype.renderScore = function(score) {
 

@@ -16,12 +16,19 @@ ul {
   margin-bottom: 0;
 }
 
+img {
+  width: 30%;
+  height: 30%;
+  margin-top: 25pt;
+  margin-bottom: 15pt;
+}
+
 #box-1 {
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
 #box-0 {
-  margin-bottom: 7%;
+  margin-bottom: 5%;
 }
 
 #box-0:hover {
@@ -66,8 +73,16 @@ li {
 
 h1 {
   text-align: center;
-  margin-bottom: 2pt;
-  margin-top: 0;
+  margin-bottom: 50pt;
+  margin-top: -30pt;
+  margin-left: 0pt;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 100pt;
+  font-size: 50pt;
+  color: #f93b78;
 }
 
 div.question-info {
@@ -102,9 +117,54 @@ div.question-info {
 
 #button-display {
   font-family: "Londrina Solid", cursive;
-  font-size: 50px;
-  margin-left: 210pt;
-  margin-top: 6pt;
+  font-size: 30pt;
+  margin-left: 218pt;
+  margin-top: 15pt;
+  border: none;
+  background-color: #f93b78;
+  color: white;
+  border-radius: 5pt;
+}
+
+#landing-page {
+  display: flex;
+  flex-flow: column;
+  margin-top: 100pt;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  flex: 1 0 auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.user-input {
+  margin-bottom: 10pt;
+}
+
+.add-user-btn {
+  background-color: #f93b78;
+  color: white;
+  font-size: 30pt;
+  font-family: "Londrina Solid", cursive;
+  border-radius: 5pt;
+  border: none;
+  width: 204pt;
+  height: 38pt;
+  align-content: center;
+}
+
+.user-input {
+  font-family: "Londrina Solid", cursive;
+  border-radius: 5pt;
+  width: 200pt;
+  height: 33pt;
+  font-size: 20pt;
+  text-align: center;
 }
 
 li#box-0 {

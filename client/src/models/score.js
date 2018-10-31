@@ -2,7 +2,7 @@ const Request = require('../helpers/request.js');
 const PubSub = require('../helpers/pub_sub.js');
 
 const Score = function(url) {
-  this.url = 'http://localhost:3000';
+  this.url = 'http://localhost:3000/';
   this.request = new Request(this.url);
   this.currentScore = 0;
 }
