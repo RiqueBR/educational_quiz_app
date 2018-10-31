@@ -4,16 +4,11 @@ const Score = require('./models/score.js');
 const Username = require('./models/username.js');
 const QuizGridView = require('./views/quiz_grid_view.js');
 const LeaderboardView = require('./views/leaderboard_view.js');
-const UsernameView = require('./views/username_view.js')
+// const UsernameView = require('./views/username_view.js')
+// const UsernameForm = require('./views/username_form_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log("javascript loaded");
-
-
-  const usernameGrid = document.querySelector('div#main-display')
-  const newUsernameGrid = new UsernameView(usernameGrid)
-  newUsernameGrid.bindEvents()
-
 
   const leaderboardGrid = document.querySelector('div#main-display')
   const newLeaderboardView = new LeaderboardView(leaderboardGrid)
@@ -27,8 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const leaderboard_data = new Leaderboard();
   leaderboard_data.getData();
 
-  const newUser = new Username();
+  // const usernameForm = document.querySelector('form#username-display')
+  // const newUsernameGrid = new UsernameForm(usernameForm);
+  // newUsernameGrid.bindEvents();
+  //
+  // const usernameContainer = document.querySelector('div.leaderboard-container')
+  // const newUsernameContainer = new UsernameView(usernameContainer)
+  // newUsernameGrid.bindEvents();
 
+  // const newUser = new Username();
+  // newUser.bindEvents();
 
   const scoreModel = new Score();
   scoreModel.bindEvents();

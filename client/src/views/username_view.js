@@ -1,30 +1,25 @@
 const PubSub = require('../helpers/pub_sub.js');
-const CreateForm = require('./form_render_view');
+const UsernameContainer = require('./username_main_container_view.js');
 
 
-const UsernameView = function(container){
+const UsernameView = function(container) {
   this.container = container
 }
 
-UsernameView.prototype.bindEvents = function () {
-  PubSub.subscribe("Form:create-html-form", (event) => {
-    console.dir(event)
+UsernameView.prototype.bindEvents = function() {
+  // subscribes to the event loaded
+  PubSub.subscribe("Username:data-loaded", (event) => {
+    this.renderUser(event.detail);
   })
 };
 
-// Needs to handle a submit event
 
-UsernameView.prototype.createUsername = function (form) {
- const newUser = {
-   username: form.username.value,
-   score: form.score.value
- }
- return newUser
-};
 
-UsernameView.prototype.renderForm = function (form) {
-  const formCreated = new CreateForm(this.container)
-  formCreated.render(form)
+UsernameView.prototype.renderUser = function(usernames) {
+  this.container.innerHTML = '';
+  const userCreated = new UsernameContainer(this.container)
+  usernames.forEach((username) => userCreated.render(username));
+
 };
 
 
